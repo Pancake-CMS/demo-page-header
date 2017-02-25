@@ -2,6 +2,12 @@
 
 A webcomponent that lets users create page-headers for pancake cms.
 
+### Installation
+
+```shell
+bower install --save pancake-cms-demo-page-header
+```
+
 ### Pancake Notes
 
 | Editable Fields | Type | Description |
