@@ -1,0 +1,62 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/content-editor/content-editor.html">
+
+<dom-module id="demo-page-header">
+    <template>
+        <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Caveat|Pompiere" rel="stylesheet">
+        <style>
+            :host {
+                margin: 0;
+                padding: 50px;
+                background: cadetblue;
+                text-align: center;
+                display: block;
+                font-family: 'Pompiere', cursive;
+            }
+
+            img {
+                height: 200px;
+            }
+
+            h1 {
+                font-size: 180px;
+                margin: 0;
+                font-family: 'Cabin Sketch', cursive;
+            }
+        </style>
+        <img src$="[[src]]" alt$="[[alt]]" is-content="attr" content-id="image-url" content-attr="src, alt">
+        <h1 is-content="inline" content-id="heading">Header</h1>
+        <div is-content="wsywig" content-id="paragraphs">
+            <p>Paragraphs</p>
+        </div>
+    </template>
+    <script>
+        Polymer({
+            is: 'demo-page-header',
+
+            properties: {
+                src: {
+                    type: String,
+                    value: '',
+                    notify: true
+                },
+
+                alt: {
+                    type: String,
+                    value: '',
+                    notify: true
+                },
+
+                usercontent: {
+                    type: Object,
+                    notify: true,
+                    reflectToAttribute: false
+                }
+            },
+
+            behaviors: [
+                ContentEditorBehavior
+            ],
+        });
+    </script>
+</dom-module>
